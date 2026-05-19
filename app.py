@@ -1,6 +1,5 @@
 import sqlite3
 
-# conexão com banco
 conexao = sqlite3.connect("Banco de dados Fokus.db")
 
 cursor = conexao.cursor()
@@ -13,7 +12,6 @@ print("4 - Deletar cliente")
 
 opcao = input("Escolha uma opção: ")
 
-# CREATE
 if opcao == "1":
 
     nome = input("Digite o nome: ")
@@ -28,7 +26,6 @@ if opcao == "1":
 
     print("Cliente cadastrado com sucesso!")
 
-# READ
 elif opcao == "2":
 
     cursor.execute("SELECT * FROM clientes")
@@ -38,7 +35,6 @@ elif opcao == "2":
     for cliente in clientes:
         print(cliente)
 
-# UPDATE
 elif opcao == "3":
 
     id_cliente = int(input("Digite o ID do cliente: "))
@@ -55,7 +51,6 @@ elif opcao == "3":
 
     print("Cliente atualizado com sucesso!")
 
-# DELETE
 elif opcao == "4":
 
     id_cliente = int(input("Digite o ID do cliente: "))
